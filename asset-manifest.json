@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reactjs-unibit/static/css/main.596d4d5f.css",
+    "main.js": "/reactjs-unibit/static/js/main.ad4d1234.js",
+    "index.html": "/reactjs-unibit/index.html",
+    "main.596d4d5f.css.map": "/reactjs-unibit/static/css/main.596d4d5f.css.map",
+    "main.ad4d1234.js.map": "/reactjs-unibit/static/js/main.ad4d1234.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.596d4d5f.css",
+    "static/js/main.ad4d1234.js"
+  ]
+}
