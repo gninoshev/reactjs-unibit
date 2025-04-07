@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Register = ({ addUser }) => {
+const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ const Register = ({ addUser }) => {
     const navigate = useNavigate();
 
     const validatePassword = (pwd) => {
-        // Must be at least 8 characters with one letter and one number
+        // Must be at least 8 characters long and contain at least one letter and one number
         const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/;
         return regex.test(pwd);
     };
@@ -45,12 +45,12 @@ const Register = ({ addUser }) => {
         }
     };
 
-
     return (
         <div className="app-container">
             <div className="form-container">
                 <h2>Register</h2>
                 {passwordError && <p className="error">{passwordError}</p>}
+                {error && <p className="error">{error}</p>}  {/* This line uses the error variable */}
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label>Username:</label>
