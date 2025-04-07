@@ -6,6 +6,7 @@ const Register = ({ addUser }) => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const validatePassword = (pwd) => {
