@@ -3,6 +3,9 @@
 
 # removing db.json
 db.json
+
+#ignoring WebStorm files
+.idea
 # dependencies
 /node_modules
 /.pnp
