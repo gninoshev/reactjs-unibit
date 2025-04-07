@@ -10,7 +10,7 @@ const Login = ({ setLoggedInUser }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`my-json-server-app.azurewebsites.net/users?username=${username}&password=${password}`);
+            const response = await fetch(`https://my-json-server-app.azurewebsites.net/users?username=${username}&password=${password}`);
             const data = await response.json();
             if (data && data.length > 0) {
                 setLoggedInUser(data[0]);
