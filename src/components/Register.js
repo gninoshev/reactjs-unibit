@@ -19,7 +19,7 @@ const Register = ({ addUser }) => {
         return Math.floor(10000000 + Math.random() * 90000000).toString();
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validatePassword(password)) {
             setPasswordError('Password must be at least 8 characters long and contain at least one letter and one number.');
@@ -27,9 +27,23 @@ const Register = ({ addUser }) => {
         }
         const userCode = generateUserCode();
         const newUser = { username, password, email, userCode };
-        addUser(newUser);
-        navigate('/');
+        try {
+            const response = await fetch('http://localhost:3001/users', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newUser),
+            });
+            if (response.ok) {
+                navigate('/');
+            } else {
+                setError('Registration failed.');
+            }
+        } catch (err) {
+            console.error('Error during registration:', err);
+            setError('Registration error');
+        }
     };
+
 
     return (
         <div className="app-container">

@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Login = ({ loginUser }) => {
+const Login = ({ setLoggedInUser }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const success = loginUser(username, password);
-        if (success) {
-            navigate('/dashboard');
-        } else {
-            setError('Invalid username or password');
+        try {
+            const response = await fetch(`http://localhost:3001/users?username=${username}&password=${password}`);
+            const data = await response.json();
+            if (data && data.length > 0) {
+                setLoggedInUser(data[0]);
+                navigate('/dashboard');
+            } else {
+                setError('Invalid username or password');
+            }
+        } catch (err) {
+            console.error('Error during login:', err);
+            setError('Login error');
         }
     };
 

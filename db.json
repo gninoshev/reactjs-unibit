@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": "650b",
+      "username": "admin",
+      "password": "admin123",
+      "email": "admin@gmail.com",
+      "userCode": "72147044"
+    }
+  ]
+}
