@@ -13,14 +13,15 @@ const Login = ({ setLoggedInUser }) => {
             const response = await fetch(`https://my-json-server-app.azurewebsites.net/users?username=${username}&password=${password}`);
             const data = await response.json();
             if (data && data.length > 0) {
+                // User exists, set logged-in user and navigate to dashboard
                 setLoggedInUser(data[0]);
                 navigate('/dashboard');
             } else {
-                setError('Invalid username or password');
+                setError('Invalid username or password.');
             }
         } catch (err) {
             console.error('Error during login:', err);
-            setError('Login error');
+            setError('Login error. Please try again later.');
         }
     };
 
