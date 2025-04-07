@@ -29,7 +29,7 @@ const Register = () => {
         const userCode = generateUserCode();
         const newUser = { username, password, email, userCode };
         try {
-            const response = await fetch('http://localhost:3001/users', {
+            const response = await fetch('http://my-json-server-app.azurewebsites.net/users', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newUser),
