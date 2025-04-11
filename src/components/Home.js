@@ -1,29 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useFetch from '../hooks/useFetch';
 
 const Home = () => {
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  // Fetch data from the JSON Server (replace URL with your deployed endpoint)
-  useEffect(() => {
-    fetch('https://my-json-server-app.azurewebsites.net/users')
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setUsers(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
+  // Replace with your deployed JSON Server endpoint
+  const { data: users, loading, error } = useFetch('https://my-json-server-app.azurewebsites.net/users');
 
   return (
     <div>
@@ -48,7 +29,7 @@ const Home = () => {
         <p>Below is dynamic data fetched from our database:</p>
         {loading && <p>Loading data...</p>}
         {error && <p>Error: {error}</p>}
-        {!loading && !error && (
+        {!loading && !error && users && (
           <ul>
             {users.map((user) => (
               <li key={user.id}>
