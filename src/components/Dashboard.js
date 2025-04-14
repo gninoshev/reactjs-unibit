@@ -8,12 +8,10 @@ const Dashboard = ({ user, logoutUser }) => {
     const [timeRemaining, setTimeRemaining] = useState(60);
     const [darkMode, setDarkMode] = useState(false); // Dark/Light mode toggle
 
-    // Reset timer callback – resets inactivity timer on user activity.
     const resetTimer = useCallback(() => {
         setTimeRemaining(60);
     }, []);
 
-    // Listen for activity events to reset the inactivity timer.
     useEffect(() => {
         if (!user) {
             navigate('/');
@@ -47,7 +45,6 @@ const Dashboard = ({ user, logoutUser }) => {
         return () => clearInterval(intervalId);
     }, [user, logoutUser, navigate]);
 
-    // Toggle dark mode by adding/removing a class on the body.
     useEffect(() => {
         if (darkMode) {
             document.body.classList.add('dark-mode');
@@ -58,7 +55,6 @@ const Dashboard = ({ user, logoutUser }) => {
 
     if (!user) return null;
 
-    // Prepare the QR code data.
     const qrData = JSON.stringify({
         username: user.username,
         email: user.email,

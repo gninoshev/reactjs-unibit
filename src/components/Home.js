@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 
 const Home = () => {
-  // Replace with your deployed JSON Server endpoint
   const { data: users, loading, error } = useFetch('https://my-json-server-app.azurewebsites.net/users');
 
   return (

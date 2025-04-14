@@ -10,7 +10,6 @@ const Register = () => {
     const navigate = useNavigate();
 
     const validatePassword = (pwd) => {
-        // Password must be at least 8 characters long and contain at least one letter and one number.
         const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/;
         return regex.test(pwd);
     };
@@ -30,14 +29,12 @@ const Register = () => {
         const newUser = { username, password, email, userCode };
 
         try {
-            // Replace the URL below with your actual Azure-hosted JSON Server endpoint.
             const response = await fetch('https://my-json-server-app.azurewebsites.net/users', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newUser),
             });
             if (response.ok) {
-                // Registration was successful. Navigate to the login page.
                 navigate('/');
             } else {
                 setError('Registration failed.');
