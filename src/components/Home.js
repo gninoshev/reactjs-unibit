@@ -27,6 +27,9 @@ const Home = () => {
                 <li>
                   <Link to="/gallery" style={{ textDecoration: 'none', color: 'white' }}>Gallery</Link>
                 </li>
+                <li>
+                  <Link to="/about" style={{ textDecoration: 'none', color: 'white' }}>About</Link>
+                </li>
               </ul>
             </nav>
           </div>
