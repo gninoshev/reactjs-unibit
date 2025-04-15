@@ -6,21 +6,23 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
 import PhotoGallery from './components/PhotoGallery';
+import About from './components/About';
 
 function App() {
-    const [loggedInUser, setLoggedInUser] = useState(null);
+  const [loggedInUser, setLoggedInUser] = useState(null);
 
-    const logoutUser = () => setLoggedInUser(null);
+  const logoutUser = () => setLoggedInUser(null);
 
-    return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard user={loggedInUser} logoutUser={logoutUser} />} />
-            <Route path="/gallery" element={<PhotoGallery />} />
-        </Routes>
-    );
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/dashboard" element={<Dashboard user={loggedInUser} logoutUser={logoutUser} />} />
+      <Route path="/gallery" element={<PhotoGallery />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
+  );
 }
 
 export default App;
