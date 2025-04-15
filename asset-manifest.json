@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/reactjs-unibit/static/css/main.5e4c9139.css",
-    "main.js": "/reactjs-unibit/static/js/main.3c54e31e.js",
+    "main.js": "/reactjs-unibit/static/js/main.c7a4162d.js",
     "index.html": "/reactjs-unibit/index.html",
     "main.5e4c9139.css.map": "/reactjs-unibit/static/css/main.5e4c9139.css.map",
-    "main.3c54e31e.js.map": "/reactjs-unibit/static/js/main.3c54e31e.js.map"
+    "main.c7a4162d.js.map": "/reactjs-unibit/static/js/main.c7a4162d.js.map"
   },
   "entrypoints": [
     "static/css/main.5e4c9139.css",
-    "static/js/main.3c54e31e.js"
+    "static/js/main.c7a4162d.js"
   ]
 }
