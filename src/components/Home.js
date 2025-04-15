@@ -24,6 +24,9 @@ const Home = () => {
                 <li>
                   <Link to="/register" style={{ textDecoration: 'none', color: 'white' }}>Register</Link>
                 </li>
+                <li>
+                  <Link to="/gallery" style={{ textDecoration: 'none', color: 'white' }}>Gallery</Link>
+                </li>
               </ul>
             </nav>
           </div>

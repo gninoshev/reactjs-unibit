@@ -45,6 +45,26 @@ const Register = () => {
         }
     };
 
+    const rowStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        marginBottom: '1rem',
+    };
+
+    const labelStyle = {
+        width: '120px',
+        marginRight: '1rem',
+        textAlign: 'right',
+    };
+
+    const inputStyle = {
+        flex: 1,
+        padding: '0.5rem',
+        fontSize: '1rem',
+        border: '1px solid #ccc',
+        borderRadius: '4px',
+    };
+
     return (
         <div className="app-container">
             <div className="form-container">
@@ -52,34 +72,51 @@ const Register = () => {
                 {passwordError && <p className="error">{passwordError}</p>}
                 {error && <p className="error">{error}</p>}
                 <form onSubmit={handleSubmit}>
-                    <div>
-                        <label>Username:</label>
+                    <div style={rowStyle}>
+                        <label style={labelStyle}>Username:</label>
                         <input
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            style={inputStyle}
                             required
                         />
                     </div>
-                    <div>
-                        <label>Password:</label>
+                    <div style={rowStyle}>
+                        <label style={labelStyle}>Password:</label>
                         <input
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            style={inputStyle}
                             required
                         />
                     </div>
-                    <div>
-                        <label>Email:</label>
+                    <div style={rowStyle}>
+                        <label style={labelStyle}>Email:</label>
                         <input
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            style={inputStyle}
                             required
                         />
                     </div>
-                    <button type="submit">Register</button>
+                    <button
+                        type="submit"
+                        style={{
+                            padding: '0.75rem 1.5rem',
+                            fontSize: '1rem',
+                            background: 'var(--primary-color)',
+                            color: '#fff',
+                            border: 'none',
+                            borderRadius: '6px',
+                            cursor: 'pointer',
+                            transition: 'background 0.3s ease, transform 0.2s ease',
+                        }}
+                    >
+                        Register
+                    </button>
                 </form>
             </div>
         </div>
