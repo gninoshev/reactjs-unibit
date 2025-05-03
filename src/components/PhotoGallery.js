@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import { Flipper, Flipped } from 'react-flip-toolkit';
 
 const PhotoGallery = () => {
-    // Define your initial set of photos.
-    // Replace these sample URLs with your actual image URLs as needed.
     const initialPhotos = [
         { id: 1, src: 'https://picsum.photos/id/1018/600/400' },
         { id: 2, src: 'https://picsum.photos/id/1015/600/400' },
@@ -12,7 +10,6 @@ const PhotoGallery = () => {
         { id: 4, src: 'https://picsum.photos/id/1020/600/400' },
         { id: 5, src: 'https://picsum.photos/id/1021/600/400' },
         { id: 6, src: 'https://picsum.photos/id/1022/600/400' },
-        // Add more photos as needed...
     ];
 
     const [photos, setPhotos] = useState(initialPhotos);
@@ -28,16 +25,15 @@ const PhotoGallery = () => {
     };
 
     return (
-        // Outer full-page wrapper with a blue gradient background
         <div
             style={{
                 minHeight: '100vh',
                 width: '100%',
-                background: 'linear-gradient(135deg, #1e3c72, #2a5298)', // Blue gradient
+                background: 'linear-gradient(135deg, #1e3c72, #2a5298)',
                 padding: '1rem'
             }}
         >
-            {/* Centered inner container with a white translucent background */}
+            {/* Централизиране на вътрешния контейнер */}
             <div
                 style={{
                     width: '100%',
